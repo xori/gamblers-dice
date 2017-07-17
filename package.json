@@ -1,0 +1,37 @@
+{
+  "name": "gamblers-dice",
+  "version": "1.0.0",
+  "description": "This set of dice *follows* the Gambler's fallacy.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "tap tests/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xori/gamblers-dice.git"
+  },
+  "engines": {
+    "node": ">=4.1.0"
+  },
+  "keywords": [
+    "dice",
+    "random",
+    "gambler",
+    "fallacy",
+    "terrible-idea",
+    "monte",
+    "carlo"
+  ],
+  "author": "Evan Verworn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xori/gamblers-dice/issues"
+  },
+  "homepage": "https://github.com/xori/gamblers-dice#readme",
+  "devDependencies": {
+    "tap": "^10.7.0"
+  }
+}
