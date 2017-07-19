@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Gambler's Dice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      .size-label {
+        display: block;
+        font-size: 18px;
+      }
+
+      .size-input {
+        display: block;
+        font-size: 18px;
+        width: 64px;
+      }
+
+      .roll-button {
+        display: block;
+        font-size: 24px;
+        margin-top: 16px;
+      }
+
+      .roll-container {
+        margin-top: 16px;
+      }
+
+      .roll {
+        display: inline-block;
+        box-sizing: border-box;
+        min-width: 36px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 8px;
+        text-align: center;
+        border: 1px solid black;
+      }
+    </style>
+
+    <script>
+      // Poor man's http://browserify.org/
+      window.module = {};
+    </script>
+    <script src="index.js"></script>
+    <script>
+      window.Die = window.module.exports;
+    </script>
+  </head>
+  <body>
+    <h1>The Gambler's Fallacy Dice</h1>
+
+    <label for="sizeInput" class="size-label">Die size</label>
+    <input type="number" id="sizeInput" class="size-input" placeholder="Die size">
+    <button id="rollButton" class="roll-button">Roll</button>
+    <div id="rollContainer" class="roll-container"></div>
+
+    <script>
+      var initalNumberOfSides = 6;
+      var die = new window.Die(initalNumberOfSides);
+      var sizeInput = document.querySelector('#sizeInput');
+      var rollButton = document.querySelector('#rollButton');
+      var rollContainer = document.querySelector('#rollContainer');
+
+      sizeInput.value = initalNumberOfSides;
+
+      sizeInput.addEventListener('input', function() {
+        rollContainer.innerHTML = '';
+        die = new window.Die(parseInt(sizeInput.value, 10));
+      });
+
+      rollButton.addEventListener('click', function() {
+        var rollValue = die.roll();
+        var rollElement = document.createElement('span');
+        rollElement.classList.add('roll');
+        rollElement.textContent = rollValue;
+        rollContainer.appendChild(rollElement);
+      });
+    </script>
+  </body>
+</html>
