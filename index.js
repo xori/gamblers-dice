@@ -6,16 +6,20 @@ class Die {
   }
 
   roll() {
-    let steps = this.state.reduce((p, c) => p + c, 0) * Math.random();
+    // add all of the states up
+    let sum = this.state.reduce((p, c) => p + c, 0);
+    // get a random number of steps between 0 and the sum
+    let steps =  sum * Math.random();
 
-    // find the target
+    // find the target we hit
     let target = 0;
     while (steps > 0) { 
       steps -= this.state[target++]; 
     }
 
-    // at this point, the target is what we want to return, so use target-1 to update zero-based states
-    this.state = this.state.map((value, index) => (index == target-1)? 1 : value + 1 );
+    // at this point, the target is what we want to return, 
+    // so use target-1 to update the zero-based states
+    this.state = this.state.map((prev_state, index) => (index == target-1)? 1 : prev_state + 1 );
     
     return target;
   }
