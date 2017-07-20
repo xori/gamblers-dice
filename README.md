@@ -41,7 +41,7 @@ This library breaks that standard rule.
 |--- | --- | --- | --- | --- | --- |
 | 1 | 25% | 25% | 25% | 25% | 1 (⚀) |
 
-In the above example, we got out our fancy die from it's box, and rolled.
+In the above example, we got out our fancy die from its box, and rolled.
 Because we are gods, we know the probability of each side being rolled, and see
 nothing amiss. Every face has a 25%, and we randomly roll a 1.
 
