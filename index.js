@@ -1,32 +1,23 @@
 
 class Die {
   constructor(size) {
-    size = size || 6
-    this.state = []
-    for (let i = 0; i < size; i++) {
-      this.state[i] = 1
-    }
+    size = size || 6;
+    this.state = new Array(size).fill(1);
   }
 
   roll() {
-    // [  1,   3,   2]
-    // [0-1, 1-4, 4-6]
-    const sum = this.state.reduce((p, c) => p + c, 0)
-    const r = Math.random() * sum
-    let runningSum = 0
-    let result = -1
-    for (let i = 0; i < this.state.length; i++) {
-      const mark = this.state[i]
-      runningSum += mark
-      if(r < runningSum && result === -1) {
-        result = i
-        this.state[i] = 1
-      } else {
-        this.state[i]++
-      }
+    let steps = this.state.reduce((p, c) => p + c, 0) * Math.random();
+
+    // find the target
+    let target = 0;
+    while (steps > 0) { 
+      steps -= this.state[target++]; 
     }
-    // Add 1, so the die roll is between 1 -> size of die
-    return (result + 1)
+
+    // at this point, the target is what we want to return, so use target-1 to update zero-based states
+    this.state = this.state.map((value, index) => (index == target-1)? 1 : value + 1 );
+    
+    return target;
   }
 }
 
