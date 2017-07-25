@@ -1,6 +1,6 @@
 {
   "name": "gamblers-dice",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This set of dice *follows* the Gambler's fallacy.",
   "main": "index.js",
   "directories": {
