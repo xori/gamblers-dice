@@ -28,6 +28,13 @@ console.log(die.roll()) // 1 -> 20
 console.log(die.roll()) // keep using the same instance
 ```
 
+### Other Languages
+
+The community has ported this to
+[Java (@eukaryote31)](https://github.com/eukaryote31/gamblers-dice)
+and [Elm (@solkaz)](https://github.com/solkaz/elm-gamblers-dice) check them out
+if these are your languages of choice!
+
 ## I don't get it
 
 Normally when rolling a 4 sided die, you would have a 25% chance of rolling any
