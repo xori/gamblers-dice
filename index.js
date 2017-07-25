@@ -13,7 +13,7 @@ class Die {
 
     // find the target we hit
     let target = 0;
-    while (steps > 0) { 
+    while (steps >= 0) { 
       steps -= this.state[target++]; 
     }
 
