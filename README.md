@@ -31,8 +31,7 @@ console.log(die.roll()) // keep using the same instance
 ### Other Languages
 
 The community has ported this to
-[Java (@eukaryote31)](https://github.com/eukaryote31/gamblers-dice)
-and [Elm (@solkaz)](https://github.com/solkaz/elm-gamblers-dice) check them out
+[Java (@eukaryote31)](https://github.com/eukaryote31/gamblers-dice), [Elm (@solkaz)](https://github.com/solkaz/elm-gamblers-dice) and [Python (@torvaney)](https://github.com/Torvaney/gamblers-dice). Check them out
 if these are your languages of choice!
 
 ## I don't get it
