@@ -7,7 +7,7 @@ class Die {
     // add all of the states up
     const sum = this.state.reduce((p, c) => p + c, 0);
     // get a random number of steps between 0 and the sum
-    let steps =  sum * Math.random();
+    let steps = sum * Math.random();
 
     // find the target we hit
     let target = 0;
